@@ -20,18 +20,6 @@ footer p {
 footer p a {
   color: #ccc;
 }
-header {
-  display: block;   
-  position: absolute;
-  top: 10px;
-  width: 640px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-     -moz-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-       -o-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
 video, canvas {
   position: absolute;
   top: 50%;
@@ -41,16 +29,6 @@ video, canvas {
       -ms-transform: translate(-50%, -50%);
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-header h1 {
-  position: absolute;
-  top:300px;
-  left: -230px;
-  -webkit-transform: rotate(-90deg);
-     -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-       -o-transform: rotate(-90deg);
-          transform: rotate(-90deg);
 }
 #controls, #uploaded, #uploading {
   position: absolute;
@@ -68,6 +46,39 @@ header h1 {
       -ms-transform: translate(-50%, -50%);
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+header {
+  position: absolute;
+  width: 600px;
+  top: -50%;
+  left: 50%;
+  background: #333;
+  padding: 10px 20px;
+  border-radius: 10px;
+  -webkit-transition: 1s 0.5s;
+     -moz-transition: 1s 0.5s;
+      -ms-transition: 1s 0.5s;
+       -o-transition: 1s 0.5s;
+          transition: 1s 0.5s;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+header h1 {
+  color: #eee;
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+header p {
+  font-size: 20px;
+  color: #ccc;
+  line-height: 1.3em;
+  padding-bottom: 10px;
+}
+.intro header {
+  top: 25%;
 }
 #controls {
   z-index: 20;

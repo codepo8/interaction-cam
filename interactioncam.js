@@ -15,10 +15,9 @@
       width = 600,
       height = 0,
       finalheight = 0,
-      state = '';
-
+      state = 'intro';
+      setstate(state);
   function init() {
-    setstate('testing');
     navigator.getMedia = ( navigator.getUserMedia || 
                            navigator.webkitGetUserMedia ||
                            navigator.mozGetUserMedia ||
@@ -108,7 +107,6 @@
       canvas.setAttribute('width', width);
       canvas.setAttribute('height', finalheight);
       streaming = true;
-      setstate('playing');
     }
   }, false);
 
@@ -116,7 +114,15 @@
     if (ev.which === 32 || ev.which === 37 || ev.which === 39) {
       ev.preventDefault();
     }
-    if (ev.which === 32) { setstate('reviewing');takepicture(); }
+    if (ev.which === 32) { 
+      if (state === 'intro') {
+        setstate('playing');
+        init();
+      } else {
+        setstate('reviewing');
+        takepicture(); 
+      }
+    }
     if (ev.which === 37) { reshoot(); }
     if (ev.which === 39) { initiateupload(); }
   },false);
@@ -148,6 +154,5 @@
     ev.preventDefault();
   }, false);
 
-  init();
 
 })();
