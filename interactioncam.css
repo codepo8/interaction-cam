@@ -111,6 +111,7 @@ header h1 {
   display: block;
   -webkit-animation: flash 1s;
      -moz-animation: flash 1s;
+       -o-animation: flash 1s;
       -ms-animation: flash 1s;
           animation: flash 1s;
 }
@@ -124,6 +125,12 @@ header h1 {
   50% { background: #fff; }
   100% { background: transparent;}
 }
+@-o-keyframes flash {
+  0% { background: transparent; }
+  50% { background: #fff; }
+  100% { background: transparent;}
+}
+
 @-moz-keyframes flash {
   0% { background: transparent; }
   50% { background: #fff; }
