@@ -11,7 +11,6 @@
       uploadbutton = document.querySelector('#uploadbutton'),
       urlfield     = document.querySelector('#uploaded input'),
       urllink      = document.querySelector('#uploaded a'),
-      head = /^data:image\/(png|jpg);base64,/,
       width = 600,
       height = 0,
       finalheight = 0,
