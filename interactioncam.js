@@ -1,4 +1,4 @@
-(function(){
+(function() {
 
   var API_KEY = 'eb18642b5b220484864483b8e21386c3';
       //  ^ get your own at https://imgur.com/register/api_anon
