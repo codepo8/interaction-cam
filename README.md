@@ -13,7 +13,7 @@ The app has been tested on Chrome, Opera an Firefox Nightly 18. In order to get 
 
 The demo is [right here on GitHub on this repository](http://codepo8.github.com/interaction-cam/):
 
-![screenshot](screenshot.png)@100
+![screenshot](http://codepo8.github.com/interaction-cam/screenshot.png)@100
 
 
 ## Usage
