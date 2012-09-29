@@ -8,6 +8,7 @@
       cover        = document.querySelector('#cover'),
       canvas       = document.querySelector('#canvas'),
       resetbutton  = document.querySelector('#resetbutton'),
+      startbutton  = document.querySelector('#startbutton'),
       uploadbutton = document.querySelector('#uploadbutton'),
       urlfield     = document.querySelector('#uploaded input'),
       urllink      = document.querySelector('#uploaded a'),
@@ -47,11 +48,10 @@
     canvas.width = width;
     canvas.height = finalheight;
     canvas.getContext('2d').drawImage(video, 0, 0, width, finalheight);
-    setstate('reviewing');
   }
 
   function reshoot() {
-    if (state === 'reviewing') {
+    if (state === 'reviewing' || state === 'uploaded') {
       setstate('playing');
     }
   }
@@ -116,17 +116,25 @@
     if (ev.which === 32 || ev.which === 37 || ev.which === 39) {
       ev.preventDefault();
     }
-    if (ev.which === 32) { takepicture(); }
+    if (ev.which === 32) { setstate('reviewing');takepicture(); }
     if (ev.which === 37) { reshoot(); }
     if (ev.which === 39) { initiateupload(); }
   },false);
 
   video.addEventListener('click', function(ev){
+    setstate('reviewing');
     takepicture();
   }, false);
 
   resetbutton.addEventListener('click', function(ev){
     if (state === 'reviewing') {
+      setstate('playing');
+    }
+    ev.preventDefault();
+  }, false);
+
+  startbutton.addEventListener('click', function(ev){
+    if (state === 'uploaded') {
       setstate('playing');
     }
     ev.preventDefault();

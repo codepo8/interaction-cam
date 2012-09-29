@@ -55,6 +55,7 @@ header h1 {
 #controls, #uploaded, #uploading {
   position: absolute;
   width: 600px;
+  text-align: center;
   top: -50%;
   left: 50%;
   -webkit-transition: 1s 0.5s;
@@ -71,7 +72,7 @@ header h1 {
 #controls {
   z-index: 20;
 }
-#controls button, #uploaded, #uploading  {
+#controls button, #uploaded form, #uploaded button, #uploading  {
   border: none;
   font-size: 18px;
   color: #fff;
@@ -79,6 +80,13 @@ header h1 {
   background: green;
   border-radius: 10px;
   padding: 10px 20px;
+}
+#uploaded form, #uploaded button {
+  width: auto;
+}
+#uploaded form {
+  background: #999;
+  margin-bottom: 10px;
 }
 #uploading, #uploaded {
   text-align:center;
@@ -111,7 +119,7 @@ header h1 {
   display: block;
   -webkit-animation: flash 1s;
      -moz-animation: flash 1s;
-       -o-animation: flash 1s;
+   /*-o-animation: flash 1s;*/
       -ms-animation: flash 1s;
           animation: flash 1s;
 }
@@ -125,11 +133,11 @@ header h1 {
   50% { background: #fff; }
   100% { background: transparent;}
 }
-@-o-keyframes flash {
+/*@-o-keyframes flash {
   0% { background: transparent; }
   50% { background: #fff; }
   100% { background: transparent;}
-}
+}*/
 
 @-moz-keyframes flash {
   0% { background: transparent; }
@@ -154,5 +162,5 @@ header h1 {
 .reviewing #video { display: none; }
 .reviewing #canvas { display: block; }
 .reviewing #controls { top: 10%; }
-.uploaded #uploaded { top: 10%; }
+.uploaded #uploaded { top: 15%; }
 .uploading #uploading { top: 10%; }
