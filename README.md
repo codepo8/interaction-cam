@@ -22,7 +22,8 @@ The cam is very simple - I deliberately did not use any fancy image effects as t
 
 * Press space or click on the video to take a photo and get to the review
 * Press the "Uh, let's try that again" button or hit the left cursor key to take another photo 
-* Press the "Win! Upload this!" button or hit thr right cursor key to upload the photo to imgUrl.
+* Press the "Win! Upload this!" button or hit the right cursor key to upload the photo to imgUrl.
+* Once uploaded, hit the "Take another" button or the right cursor key to take another photo
 
 ## Image uploading 
 
