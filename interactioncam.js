@@ -1,13 +1,17 @@
 (function(){
 
+  var API_KEY = 'eb18642b5b220484864483b8e21386c3';
+      //  ^ get your own at https://imgur.com/register/api_anon
+      //    as it is limited to 50 uploads an hour!
   var streaming = false,
       video        = document.querySelector('#video'),
       cover        = document.querySelector('#cover'),
       canvas       = document.querySelector('#canvas'),
-      urlfield     = document.querySelector('#uploaded input'),
-      urllink      = document.querySelector('#uploaded a'),
       resetbutton  = document.querySelector('#resetbutton'),
       uploadbutton = document.querySelector('#uploadbutton'),
+      urlfield     = document.querySelector('#uploaded input'),
+      urllink      = document.querySelector('#uploaded a'),
+      head = /^data:image\/(png|jpg);base64,/,
       width = 600,
       height = 0,
       finalheight = 0,
@@ -68,11 +72,11 @@
         data = '';
 
     setstate('uploading');
-    data = 'mozGetAsFile' in canvas ? 
-           canvas.mozGetAsFile('webcam.png')
-           data = canvas.toDataURL('image/png').replace(head, '');
-    fd.append('image', toSend);
-    fd.append('key', '6528448c258cff474ca9701c5bab6927');
+    data = ('mozGetAsFile' in canvas) ? 
+           canvas.mozGetAsFile('webcam.png') : 
+           canvas.toDataURL('image/png').replace(head, '');
+    fd.append('image', data);
+    fd.append('key', API_KEY);
     xhr.open('POST', 'http://api.imgur.com/2/upload.json');
     xhr.addEventListener('error', function(ev) {
       console.log('Upload Error :');
