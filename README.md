@@ -9,6 +9,12 @@ The app has been tested on Chrome, Opera an Firefox Nightly 18. In order to get 
 * Type `about:config` and say yes that you want to make changes
 * Find the `media.navigator.enabled` entry and set it to true
 
+## Demo 
+
+The demo is [right here on GitHub on this repository](http://codepo8.github.com/interaction-cam/):
+
+
+
 ## Usage
 
 The cam is very simple - I deliberately did not use any fancy image effects as there are enough cam examples like that out there. 
