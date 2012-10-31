@@ -18,18 +18,18 @@
       state = 'intro';
       setstate(state);
   function init() {
-    navigator.getMedia = ( navigator.getUserMedia || 
+    navigator.getMedia = ( navigator.getUserMedia ||
                            navigator.webkitGetUserMedia ||
                            navigator.mozGetUserMedia ||
                            navigator.msGetUserMedia);
 
     navigator.getMedia(
-      { 
-        video: true, 
-        audio: false 
+      {
+        video: true,
+        audio: false
       },
       function(stream) {
-        if (navigator.mozGetUserMedia) { 
+        if (navigator.mozGetUserMedia) {
           video.mozSrcObject = stream;
         } else {
           var vendorURL = window.URL || window.webkitURL;
@@ -47,6 +47,10 @@
     canvas.width = width;
     canvas.height = finalheight;
     canvas.getContext('2d').drawImage(video, 0, 0, width, finalheight);
+    var img = new Image();
+    img.src = 'mozfest.png';
+    console.log(img);
+    canvas.getContext('2d').drawImage(img, 0, 450-104, 640, 104);
   }
 
   function reshoot() {
@@ -70,8 +74,8 @@
         data = '';
 
     setstate('uploading');
-    data = ('mozGetAsFile' in canvas) ? 
-           canvas.mozGetAsFile('webcam.png') : 
+    data = ('mozGetAsFile' in canvas) ?
+           canvas.mozGetAsFile('webcam.png') :
            canvas.toDataURL('image/png').replace(head, '');
     fd.append('image', data);
     fd.append('key', API_KEY);
@@ -94,8 +98,8 @@
 
   function setstate(newstate) {
     state = newstate;
-    document.body.className = newstate;    
-  }    
+    document.body.className = newstate;  
+  } 
 
   /* Event Handlers */
 
@@ -114,13 +118,13 @@
     if (ev.which === 32 || ev.which === 37 || ev.which === 39) {
       ev.preventDefault();
     }
-    if (ev.which === 32) { 
+    if (ev.which === 32) {
       if (state === 'intro') {
         setstate('playing');
         init();
       } else {
         setstate('reviewing');
-        takepicture(); 
+        takepicture();
       }
     }
     if (ev.which === 37) { reshoot(); }
@@ -153,6 +157,5 @@
     }
     ev.preventDefault();
   }, false);
-
 
 })();

@@ -20,15 +20,26 @@ footer p {
 footer p a {
   color: #ccc;
 }
-video, canvas {
+video {
+  display: block;
+}
+#videocontainer, canvas {
   position: absolute;
   top: 50%;
   left: 50%;
+  min-width: 640px;
+  min-height: 450px;
   -webkit-transform: translate(-50%, -50%);
      -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+#videocontainer img {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
 }
 #controls, #uploaded, #uploading {
   position: absolute;
@@ -167,10 +178,10 @@ header p {
 }
 
 /* states */
-.testing #video, .testing #canvas { display: none; }
-.playing #video { display: block; }
+.intro #videocontainer, .testing #videocontainer, .testing #canvas { display: none; }
+.playing #videocontainer { display: block; }
 .playing #canvas { display: none; }
-.reviewing #video { display: none; }
+.reviewing #videocontainer { display: none; }
 .reviewing #canvas { display: block; }
 .reviewing #controls { top: 10%; }
 .uploaded #uploaded { top: 15%; }

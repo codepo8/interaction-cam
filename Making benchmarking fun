@@ -1,0 +1,22 @@
+Making benchmarking fun
+
+Tomorrow the coremob is meeting the Mozilla space in London to discuss the future of browser benchmarking. Sadly I won't be able to attend as I am at the Adobe event on the same day and flying to Amsterdam for Fronteers later. However, I have a problem with the testing and benchmarking we do right now and my colleague xyz will also talk about this tomorrow morning. 
+
+<h2>Benchmarks are becoming marketing material</h2>
+
+My main concern is that browser benchmarks as a whole are a very academic and "close to the metal" exercise. Creating and wiping and empty canvas or creating and destroying thousands of objects gives you results, but it doesn't really mean that real product needs are met by optimising for these use cases. 
+
+Even worse is that the press is so hungry for browser news and loves when big corporates shoot at it each other. That's why a lot of benchmarks are flawed from the very start to give a better result for one browser or platform or another. They've become a marketing tool, rather than helping us building better products with the web. Above all though, they are very, very boring. 
+
+<h2>Making benchmarking fun again</h2>
+
+Let's wind back the clock a bit to 1997. You might not have heard of this but back then <a href="http://www.pouet.net/prod.php?which=7259">Final reality</a> was all the rage. It was a product of the demo scene (closely related to the much acclaimed <a href="">Second reality</a>) and a very cool thing to watch back then. You can check <a href="http://www.youtube.com/watch?v=IT4cM3FNX4Q">the YouTube video</a> to see what it looked like.
+
+
+This pushed the limits of the video card, the sound system and the CPU and the amazing thing was that it was a benchmark. After the demo ran all the way through you got a report on how well your hardware did in the test. These reports were not only bragging rights amongst overclockers but also used by admins to test out hardware in 10 minutes that would have taken ages. 
+
+So why don't we do something similar now?
+
+<h2>The benchmarking game</h2>
+
+How about that instead of an automated script we'd have a game? A platformer or 2D shooter that gets incrementally more technically challenging to the platform the longer you play and 
