@@ -17,19 +17,22 @@
       finalheight = 0,
       state = 'intro';
       setstate(state);
+  if (localStorage.interactionphotos === undefined) {
+    localStorage.interactionphotos = '';
+  }
   function init() {
-    navigator.getMedia = ( navigator.getUserMedia || 
+    navigator.getMedia = ( navigator.getUserMedia ||
                            navigator.webkitGetUserMedia ||
                            navigator.mozGetUserMedia ||
                            navigator.msGetUserMedia);
 
     navigator.getMedia(
-      { 
-        video: true, 
-        audio: false 
+      {
+        video: true,
+        audio: false
       },
       function(stream) {
-        if (navigator.mozGetUserMedia) { 
+        if (navigator.mozGetUserMedia) {
           video.mozSrcObject = stream;
         } else {
           var vendorURL = window.URL || window.webkitURL;
@@ -70,8 +73,8 @@
         data = '';
 
     setstate('uploading');
-    data = ('mozGetAsFile' in canvas) ? 
-           canvas.mozGetAsFile('webcam.png') : 
+    data = ('mozGetAsFile' in canvas) ?
+           canvas.mozGetAsFile('webcam.png') :
            canvas.toDataURL('image/png').replace(head, '');
     fd.append('image', data);
     fd.append('key', API_KEY);
@@ -82,6 +85,8 @@
     xhr.addEventListener('load', function(ev) {
       try {
         var links = JSON.parse(xhr.responseText).upload.links;
+        localStorage.interactionphotos = localStorage.interactionphotos + ' ' +
+                                         links.imgur_page.replace(/.*\/+/,'');
         urlfield.value = links.imgur_page;
         urllink.href = links.imgur_page;
         setstate('uploaded');
@@ -94,8 +99,8 @@
 
   function setstate(newstate) {
     state = newstate;
-    document.body.className = newstate;    
-  }    
+    document.body.className = newstate;
+  }
 
   /* Event Handlers */
 
@@ -114,13 +119,13 @@
     if (ev.which === 32 || ev.which === 37 || ev.which === 39) {
       ev.preventDefault();
     }
-    if (ev.which === 32) { 
+    if (ev.which === 32) {
       if (state === 'intro') {
         setstate('playing');
         init();
       } else {
         setstate('reviewing');
-        takepicture(); 
+        takepicture();
       }
     }
     if (ev.which === 37) { reshoot(); }
