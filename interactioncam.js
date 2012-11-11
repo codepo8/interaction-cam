@@ -90,6 +90,7 @@
            canvas.toDataURL('image/png').replace(head, '');
 
     if (location.hostname.indexOf('localhost')!== -1) {
+      document.querySelector('form').style.display = 'none';
       fd.append('contents', data);
       xhr.open('POST', 'copy.php');
       xhr.addEventListener('error', function(ev) {
