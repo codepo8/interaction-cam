@@ -18,7 +18,7 @@
       width        = 600,
       height       = 450,
       state        = 'intro',
-      sounds       = {shutter: audio[0],rip: audio[1], takeoff: audio[2]};
+      sounds       = {shutter: audio[0],rip: audio[1], takeoff: audio[2]},
       img          = new Image();
       img.src = 'mozfest.png';
       setstate(state);
