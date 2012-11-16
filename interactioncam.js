@@ -28,9 +28,9 @@
 
   /* BRANDING */
   var img = new Image(),
-      imgwidth = 600,
-      imgheight = 104;
-  img.src = 'mozfest.png';
+      imgwidth = 150,
+      imgheight = 150;
+  img.src = 'mozcamp.png';
 
   if (location.hostname.indexOf('localhost')!== -1) {
     document.querySelector('#imgurform').style.display = 'none';
@@ -72,7 +72,7 @@
     ctx.drawImage(video, 0, 0, width, finalheight);
     ctx.restore();
     ctx.scale(1, 1);
-    ctx.drawImage(img, 0, 450 - imgheight, imgwidth, imgheight);
+    ctx.drawImage(img, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
   }
 
   function reshoot() {
@@ -82,7 +82,7 @@
     if (state === 'reviewing' || state === 'uploaded') {
       canvas.width = width;
       canvas.height = finalheight;
-      ctx.drawImage(img, 0, 450-104, 600, 104);
+      ctx.drawImage(img, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
       setstate('playing');
     }
   }
@@ -156,7 +156,7 @@
       video.setAttribute('height', finalheight);
       canvas.width = width;
       canvas.height = finalheight;
-      ctx.drawImage(img, 0, 450 - 104, 600, 104);
+      ctx.drawImage(img, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
       streaming = true;
       vidcontainer.classname = 'playing';
     }
