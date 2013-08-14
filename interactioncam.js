@@ -57,6 +57,8 @@
           video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
         }
         video.play();
+        video.style.width = width + 'px';
+        video.style.height = height + 'px';
       },
       function(err) {
         console.log("An error occured! " + err);
@@ -149,9 +151,10 @@
 
   /* Event Handlers */
 
-  video.addEventListener('canplay', function(ev){
+  video.addEventListener('play', function(ev){
     if (!streaming) {
-      finalheight = video.videoHeight / (video.videoWidth/width);
+      console.log(video.clientHeight);
+      finalheight = video.clientHeight / (video.clientWidth/width);
       video.setAttribute('width', width);
       video.setAttribute('height', finalheight);
       canvas.width = width;
